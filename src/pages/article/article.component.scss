@@ -1,0 +1,101 @@
+@import "../../styles.scss";
+
+.article-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 100px;
+  max-width: 1220px;
+  margin: auto;
+}
+
+.table-of-content {
+  height: clamp(400px, 600px, 900px);
+
+  position: sticky;
+  top: 64px;
+  margin-top: 100px;
+  color: $text-accent;
+
+  & > p {
+    color: $text-primary;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.toc-item {
+  margin: 12px 0px;
+  font-size: 13px;
+  color: $text-accent;
+}
+.toc-item:hover,
+.toc-item:hover > a {
+  color: darken($highlight-green, 60%);
+}
+.article {
+  padding: 20px;
+  margin: auto;
+}
+
+.paragraph {
+  padding: 18px 0px;
+  line-height: 38px;
+  font-weight: 500;
+  color: $text-primary;
+}
+
+.heading {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: 24px;
+  margin-top: 28px;
+  font-weight: 700;
+}
+
+.image {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  .table-of-content {
+    display: none;
+  }
+}
+
+.image-caption {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 20px;
+  padding-top: 8px;
+}
+
+.quote {
+  color: $text-primary;
+  border: 0px $accent-green solid;
+  border-width: 0px 0px 0px 4px;
+  padding: 18px;
+  background-color: $highlight-green;
+  border-radius: 4px 8px 8px 4px;
+  margin-top: 16px;
+}
+
+.quote-heading {
+  margin: 4px 0px 16px 0px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.quote-body {
+  font-weight: 500;
+  line-height: 32px;
+}

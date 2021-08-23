@@ -1,0 +1,11 @@
+@import "../../styles.scss";
+
+.app-logo {
+  font-family: $PoppinsText;
+  padding: 4px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  color: $text-primary;
+  border: 3px $text-primary dashed;
+}

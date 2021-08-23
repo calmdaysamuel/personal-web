@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+<div>
+  <div class="blog-page">
+    <div>
+      <p class="blog-page-heading">{{ sectionTitle }}</p>
+      <div class="card-section">
+        <a
+          *ngFor="let item of articles"
+          routerLink="/blog/{{ item.articleHash }}"
+          routerLinkActive="active"
+        >
+          <div class="card-container">
+            <p class="card-heading">{{ item.title }}</p>
+            <p class="card-caption">
+              {{ item.summary }}
+            </p>
+            <p class="card-date">{{ item.date }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="right">
+      <p>Top Categories</p>
+      <div class="top-categories">
+        <p *ngFor="let item of topCategories">#{{ item }}</p>
+      </div>
+      <p>Popular Articles</p>
+      <div class="popular-articles">
+        <a
+          *ngFor="let item of popularArticles"
+          routerLink="/blog/{{ item.articleHash }}"
+          routerLinkActive="active"
+        >
+          <div class="article-c">
+            <right-arrow-svg></right-arrow-svg>
+            <P class="a">{{ item.title }}</P>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

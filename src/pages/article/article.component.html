@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div class="article-container">
+  <div class="article">
+    <p class="heading" id="SH1">{{ article.title }}</p>
+    <div *ngFor="let item of article.blocks; index as i">
+      <div [ngSwitch]="item.type">
+        <p class="paragraph" *ngSwitchCase="'paragraph'">{{ item.content }}</p>
+        <p class="sub-heading" *ngSwitchCase="'sub-heading'" id="SH{{ i + 1 }}">
+          {{ item.content }}
+        </p>
+        <p class="heading" *ngSwitchCase="'heading'">{{ item.content }}</p>
+        <img
+          class="image"
+          src="{{ item.content }}"
+          alt=""
+          *ngSwitchCase="'image'"
+        />
+        <div *ngIf="item.desc != null">
+          <p class="image-caption" *ngSwitchCase="'image'">{{ item.desc }}</p>
+        </div>
+        <div class="quote" *ngSwitchCase="'quote'">
+          <p class="quote-heading">{{ item.content }}</p>
+          <p class="quote-body">{{ item.desc }}</p>
+        </div>
+
+        <div *ngSwitchDefault></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-of-content">
+    <p>Table of Content</p>
+    <li class="toc-item">
+      <a [routerLink]="['/blog/{{pageHash}}']" fragment="SH1">
+        {{ article.title }}</a
+      >
+    </li>
+    <div *ngFor="let item of article.blocks; index as i">
+      <li class="toc-item" *ngIf="item.type === 'sub-heading'">
+        <a [routerLink]="['/blog/{{pageHash}}']" fragment="SH{{ i + 1 }}">
+          {{ item.content }}</a
+        >
+      </li>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

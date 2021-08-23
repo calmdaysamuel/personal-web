@@ -1,0 +1,155 @@
+@import "../../styles.scss";
+
+.resume-page {
+  & > div:nth-child(n) {
+    background-color: $background-accent;
+    padding: 20px;
+  }
+
+  & > div:nth-child(2n) {
+    background-color: $background-primary;
+    padding: 20px;
+  }
+
+  & > * > * {
+    max-width: 900px;
+    margin: auto;
+  }
+}
+.resume-bio {
+  background-color: $background-accent;
+  margin: auto;
+  padding: 80px 0;
+  & > p:nth-child(1) {
+    font-size: 84px;
+    line-height: 84px;
+    font-weight: 600;
+  }
+
+  & > p:nth-child(2) {
+    margin-top: 24px;
+    padding: 6px 0px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $text-primary;
+    max-width: 600px;
+  }
+}
+
+.resume-education {
+  padding: 40px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: $background-primary;
+  & > div {
+    padding: 6px 0px;
+    line-height: 38px;
+    font-weight: 500;
+    color: $text-primary;
+    font-size: 16px;
+
+    & > div {
+      & > p:nth-child(1) {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 12px;
+
+        & > span {
+          color: darken($highlight-blue, 40%);
+        }
+      }
+
+      & > p:nth-child(2) {
+        margin-top: 8px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.resume-work-experience {
+  padding: 40px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: $background-accent;
+
+  & > div > div {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  & > div > p {
+    font-size: 24px;
+    margin-top: 32px;
+
+    & > span {
+      color: darken($highlight-green, 60%);
+    }
+  }
+
+  & > div > ul {
+    padding-left: 28px;
+    & > li {
+      padding-left: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 16px 0px;
+    }
+  }
+}
+
+.resume-projects {
+  padding: 40px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: $background-primary;
+}
+
+.resume-awards,
+.resume-activities {
+  padding: 40px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: $background-accent;
+
+  & > div {
+    font-size: 14px;
+    & > p > span {
+      color: $text-accent;
+      font-weight: 500;
+    }
+    & > p > span:nth-child(1) {
+      color: $text-primary;
+      font-weight: 600;
+    }
+
+    & > p {
+      padding: 26px 0px;
+      border-bottom: 1px $text-accent solid;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .resume-activities > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .resume-bio {
+    & > p:nth-child(2) {
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .resume-bio {
+    & > p:nth-child(1) {
+      font-size: 62px;
+      line-height: 62px;
+      font-weight: 600;
+    }
+  }
+}

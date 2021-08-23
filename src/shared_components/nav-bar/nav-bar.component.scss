@@ -1,0 +1,50 @@
+@import "../../styles.scss";
+.background-accent {
+  background-color: $background-primary;
+
+  & > * {
+    max-width: 1320px;
+    padding: 12px 20px;
+    margin: auto;
+  }
+}
+.app-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  font-family: $PoppinsText;
+  font-weight: 600;
+  font-size: 13px;
+  color: $text-primary;
+  background-color: $background-primary;
+
+  & > div {
+    display: inline-flex;
+
+    gap: 30px;
+    margin: 30px 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-nav-bar {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    font-size: 15px;
+    & > div {
+      gap: 30px;
+      margin: 16px 0px;
+    }
+  }
+}
+a,
+a:visited {
+  font-size: 12px;
+  color: $text-primary;
+  transition: 0.3s font-size ease;
+}
+a:hover {
+  font-size: 13px;
+  color: $text-accent;
+  transition: 0.3s font-size ease;
+}

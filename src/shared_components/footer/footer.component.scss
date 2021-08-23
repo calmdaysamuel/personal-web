@@ -1,0 +1,67 @@
+@import "../../styles.scss";
+
+.background-primary {
+  background-color: $background-primary;
+
+  & > * {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
+.app-footer {
+  display: grid;
+  background-color: $background-primary;
+  color: $text-primary;
+  font-weight: 300;
+  min-height: 278px;
+  grid-template-columns: 1fr 1fr;
+  padding: 80px 20px;
+  & > div > a > p {
+    margin: 18px 0px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  & > div > section {
+    display: inline-flex;
+
+    gap: 30px;
+    font-weight: 600;
+  }
+
+  & > div > div > p {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-footer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+    & > div > section {
+      display: inline-flex;
+
+      gap: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    & > div > p {
+      margin: 18px 0px;
+      font-weight: 600;
+      font-size: 22px;
+    }
+  }
+}
+
+a,
+a:visited {
+  font-size: 18px;
+  color: $text-primary;
+  transition: 0.3s font-size ease;
+}
+a:hover {
+  font-size: 20px;
+  color: $text-accent;
+  transition: 0.3s font-size ease;
+}

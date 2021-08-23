@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+.contact-page {
+  max-width: 1320px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.small-caps {
+  font-size: 14px;
+  color: $text-accent;
+  font-weight: 500;
+}
+
+.large-heading {
+  font-size: 72px;
+  color: $text-primary;
+  font-weight: 700;
+}
+
+.general-text {
+  padding: 6px 0px;
+  line-height: 38px;
+  font-weight: 500;
+  color: $text-primary;
+  max-width: 800px;
+  margin-top: 16px;
+}
+
+.email,
+.email:visited {
+  color: $text-primary;
+  font-size: 24px;
+  font-weight: 700;
+}
+.email:hover {
+  color: $text-accent;
+}
+
+.contact-image {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 18px;
+}
+
+.sec-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 22px;
+}

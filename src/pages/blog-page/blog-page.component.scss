@@ -1,0 +1,147 @@
+@import "../../styles.scss";
+
+.blog-page {
+  max-width: 1220px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  padding: 20px;
+  margin: auto;
+  gap: 52px;
+  margin-top: 52px;
+}
+.card-container {
+  margin: 16px 0px;
+}
+
+.card-container:hover {
+  p.card-heading {
+    color: darken($highlight-green, 60%);
+    margin-right: 12px;
+    transition: 0.2s color ease;
+  }
+}
+.card-image {
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.card-heading {
+  color: $text-primary;
+  font-weight: 600;
+  font-size: 24px;
+  transition: 0.3s color ease;
+}
+
+.card-caption {
+  color: $text-primary;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 12px;
+  line-height: 28px;
+}
+
+.card-date {
+  color: darken($highlight-green, 60%);
+  font-size: 13px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.right {
+  position: sticky;
+  top: 90px;
+  height: clamp(400px, 600px, 900px);
+  & > * {
+    margin-top: 12px;
+  }
+  & > p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .right {
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-page {
+    grid-template-columns: 1fr;
+  }
+  .card-image {
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 16px;
+  }
+  .right {
+  }
+}
+
+.article-c {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 20px;
+  padding: 8px 0px;
+  & > right-arrow-svg {
+    margin: auto;
+    position: relative;
+    left: 0px;
+    transition: 0.3s left ease;
+  }
+
+  & > p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.article-c:hover {
+  & > right-arrow-svg {
+    position: relative;
+    left: 12px;
+    transition: 0.3s left ease;
+  }
+}
+
+.top-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  & > p {
+    background-color: #f2f2f2;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  & > p:hover {
+    background-color: darken(#f2f2f2, 10%);
+    cursor: pointer;
+  }
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.blog-page-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: darken($highlight-green, 60%);
+}
+
+.hero {
+  background-image: url("../../assets/wave-haikei\ \(2\).svg");
+  object-fit: cover;
+  & > img {
+    max-height: 300px;
+  }
+}
